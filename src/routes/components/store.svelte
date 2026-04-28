@@ -76,14 +76,16 @@
 		cursor: pointer;
 		transition: all 0.4s ease;
 
-		&:hover {
-			scale: 1.01;
-			box-shadow: 0px 5px 10px 2px rgba(168, 67, 250, 0.2);
-			.options p.name {
-				text-decoration: underline;
-				text-decoration-color: g.$color-tint7;
+		@media (hover: hover) {
+			&:hover {
+				box-shadow: 0px 5px 10px 2px rgba(168, 67, 250, 0.2);
+				.options p.name {
+					text-decoration: underline;
+					text-decoration-color: g.$color-tint7;
+				}
 			}
 		}
+
 
 		.options {
 			display: flex;

@@ -78,11 +78,15 @@
 			cursor: pointer;
 			transition: all 0.2s ease;
 
-			&:hover {
-				background-color: rgba(g.$color-tint9, 0.5);
-				border: 2px solid g.$color-shade3;
-				color: g.$color-shade3;
+
+			@media (hover: hover) {
+				&:hover {
+					background-color: rgba(g.$color-tint9, 0.5);
+					border: 2px solid g.$color-shade3;
+					color: g.$color-shade3;
+				}
 			}
+			
 
 			span {
 				font-size: 28px;
