@@ -1,28 +1,26 @@
 
 <div class="app">
+	<div class="content">
+		<div class="card">
+			<div class="icon">
+				<span class="material-symbols-rounded">shopping_cart</span>
+			</div>
 
-	<div class="card">
-		<div class="icon">
-			<span class="material-symbols-rounded">shopping_cart</span>
+			<div class="border"></div>
+
+			<div class="items">
+
+				<p class="no-items">
+					No items yet...
+				</p>
+
+			</div>
+
+			<div class="checkout">
+				<button>Checkout <span class="material-symbols-rounded">arrow_right</span></button>
+			</div>
 		</div>
-
-		<div class="border"></div>
-
-		<div class="items">
-
-			<p class="no-items">
-				No items yet...
-			</p>
-
-		</div>
-
-		<div class="checkout">
-			<button>Checkout <span class="material-symbols-rounded">arrow_right</span></button>
-		</div>
-		
-
 	</div>
-
 </div>
 
 <style lang="scss">
@@ -34,9 +32,15 @@
 		background-color: g.$color-tint9;
 		padding: 24px 0;
 	}
+
+	.app .content {
+		width: 100%;
+		max-width: 700px;
+		overflow: visible;
+	}
 	.card {
 		background-color: white;
-		width: 700px;
+		width: 100%;
 		height: 64px;
 		border-radius: 12px;
 		box-shadow: 0px 5px 10px 2px rgba(168, 67, 250, 0.1);
@@ -105,6 +109,12 @@
 		span {
 			font-size: 30px;
 			color: g.$color-shade4;
+		}
+	}
+
+	@media (max-width: 48em) { // extra small screens 480 px
+		.content {
+			padding: 0 12px;
 		}
 	}
 </style>

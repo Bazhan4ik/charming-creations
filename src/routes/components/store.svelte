@@ -13,7 +13,7 @@
 			</div>
 			<div class="options">
 				<p class="name">Bag</p>
-				<p class="colors">3 colors</p>
+				<p class="colors">3 <span class="remove">colors</span></p>
 			</div>
 			<div class="price">
 				<p>60.99$</p>
@@ -26,7 +26,7 @@
 			</div>
 			<div class="options">
 				<p class="name">Cool looking hat</p>
-				<p class="colors">3 colors</p>
+				<p class="colors">3 <span class="remove">colors</span></p>
 			</div>
 			<div class="price">
 				<p>60.99$</p>
@@ -39,7 +39,8 @@
 			</div>
 			<div class="options">
 				<p class="name">Labubu</p>
-				<p class="colors">3 colors</p>
+				<p class="colors">3 <span class="remove">colors</span></p>
+
 			</div>
 			<div class="price">
 				<p>10.99$</p>
@@ -61,10 +62,12 @@
 		padding-bottom: 200px;
 		
 		.items {
-			width: 700px;
+			width: 100%;
+			max-width: 700px;
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			gap: 24px;
+			overflow: visible;
 		}
 	}
 
@@ -88,26 +91,32 @@
 
 
 		.options {
-			display: flex;
-			justify-content: space-between;
+			display: grid;
+			grid-template-columns: 65% 35%;
 			align-items: center;
 
 			p.name {
 				font-family: g.$font-family_text;
 				color: g.$color-shade6;
-				font-size: 20px;
+				font-size: 1.25rem;
+				white-space: nowrap;
+
+				mask-image: linear-gradient(to right, black 70%, transparent 100%);
+				-webkit-mask-image: linear-gradient(to right, black 70%, transparent 100%);
 			}
 			p.colors {
 				font-family: g.$font-family_text;
 				color: g.$color-shade6;
-				font-size: 16px;
+				font-size: 1rem;
+				white-space: nowrap;
+				width: min-content;
 			}
 		}
 		.price {
 			p {
 				font-family: g.$font-family_text;
 				color: rgba(g.$color-shade4, 0.5);
-				font-size: 16px;
+				font-size: 1rem;
 			}
 		}
 
@@ -126,4 +135,20 @@
 		}
 
 	}
+
+	@media (max-width: 48em) { // extra small screens 480 px
+		.app .items {
+			padding: 0 12px;
+			gap: 12px;
+		}
+		.items .item .options {
+			grid-template-columns: 1fr 12px;
+			gap: 8px;
+		}
+		p.colors {
+			text-align: end;
+			.remove { display: none; }
+		}
+	}
+
 </style>
