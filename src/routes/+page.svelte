@@ -34,23 +34,28 @@
 <style lang="scss">
 	@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis:YEAR@1979&family=Croissant+One&family=Sniglet:wght@400;800&display=swap');
 
+	@media (min-width: 100em) { // laptops or big tablets, normal 1000px
+
+	}
+
+	.app {
+		width: 100%;
+	}
+
 	.content {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		
-		width: 100vw;
+		width: 100%;
 		padding-top: 64px;
-		
-		// background: #FFF;
-		// background: linear-gradient(180deg,rgba(255, 255, 255, 1) 0%, rgba(246, 236, 255, 1) 20%, rgba(246, 236, 255, 1) 80%, rgba(255, 255, 255, 1) 100%);
 	}
 
+	
+
 	.header {
-		width: 100vw;
+		width: 100%;
 		padding-top: 100px;
-		//background-color: #a843fa;
-		//background-color: #b156fb;
 
 		display: flex;
 		align-items: center;
@@ -67,11 +72,8 @@
 		p {
 			z-index: 1;
 			font-family: "Climate Crisis", sans-serif;
-			//color: #f6ecff;
-			//color: #eed9fe;
 			color: #b156fb;
-			font-size: 40px;
-			//letter-spacing: 2px;
+			font-size: 2.5rem;
 		}
 
 		.text {
@@ -87,9 +89,19 @@
 				width: 700px;
 				text-align: right;
 			}
-
-			
 		}
+	}
+
+	@media (max-width: 48em) { // extra small screens 480 px
+		.header .text {
+			width: 100%;
+			padding: 0 32px;
+
+			.t1, .t2 {
+				width: 100%;
+			}
+		}
+
 	}
 
 </style>

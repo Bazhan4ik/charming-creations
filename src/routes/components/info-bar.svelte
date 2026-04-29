@@ -42,7 +42,8 @@
 	}
 
 	.content {
-		width: 700px;
+		width: 100%;
+		max-width: 700px;
 	}
 
 	.subtitle-text {
@@ -73,6 +74,17 @@
 			color: g.$color-tint4;
 			font-weight: 400;
 		}
+	}
+
+	@media (max-width: 48em) { // extra small screens 480 px
+		.subtitle-text, .business-info {
+			padding-left: 12px;
+		}
+		.business-info {
+			flex-direction: column;
+			justify-content: start;
+		}
+	
 	}
 
 </style>
