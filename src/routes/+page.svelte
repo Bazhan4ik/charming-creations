@@ -5,6 +5,8 @@
 	import Store from "./components/store.svelte"
 	import Cart from "./components/cart.svelte"
 
+	const { data } = $props();
+
 </script>
 
 
@@ -24,7 +26,7 @@
 	<div class="content">
 		<InfoBar></InfoBar>
 		<Cart></Cart>
-		<Store></Store>
+		<Store items={data.items}></Store>
 	</div>
 
 

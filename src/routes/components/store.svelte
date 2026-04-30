@@ -3,10 +3,32 @@
 	import Img_Item2 from "$lib/assets/item2_pink.png";
 	import Img_Item3 from "$lib/assets/item3_pink.png";
 
+	import type { Item } from "$lib/index"
+    import { onMount } from "svelte";
+
+	const { items }: { items: Item[] } = $props();
+
+	onMount(() => {
+		console.log(items);
+	})
 </script>
 
 <div class="app">
 	<div class="items">
+		{#each items as item}
+			<div class="item">
+				<div class="item-image">
+					<img src={Img_Item1} alt="">
+				</div>
+				<div class="options">
+					<p class="name">{item.name}</p>
+					<p class="colors">3 <span class="remove">colors</span></p>
+				</div>
+				<div class="price">
+					<p>60.99$</p>
+				</div>
+			</div>
+		{/each}
 		<div class="item">
 			<div class="item-image">
 				<img src={Img_Item1} alt="">
