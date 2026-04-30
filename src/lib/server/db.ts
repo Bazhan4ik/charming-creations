@@ -5,12 +5,12 @@ import { MongoClient } from "mongodb"
 let client: MongoClient;
 
 
-export async function dbClient(): Promise<MongoClient> {
-	if(!client) {
-		client = new MongoClient(MONGODB);
-	}
+// export async function dbClient(): Promise<MongoClient> {
+	// if(!client) {
+		// client = new MongoClient(MONGODB);
+	// }
 
-	await client.connect();
+	// await client.connect();
 
-	return client;
-}
+	// return client;
+// }
